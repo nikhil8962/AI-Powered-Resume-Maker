@@ -10,7 +10,7 @@ export class ResumeService {
 
   constructor(private http: HttpClient) { }
 
-  baseUrl: string = "http://localhost:8080";
+  baseUrl: string = "https://ai-powered-resume-maker.onrender.com";
 
   generateResume(description: string) {
     return this.http.post(this.baseUrl + "/api/v1/resume/generate", {
