@@ -1,0 +1,235 @@
+<div id="resume-content" class="resume-container" [ngClass]="'theme-' + templateType">
+
+  <!-- Header -->
+
+  <div class="header">
+
+    <h1>{{resumeData?.personalInformation?.fullName}}</h1>
+
+    <div class="contact">
+      <span *ngIf="resumeData?.personalInformation?.email"><mat-icon *ngIf="templateType==='premium'" class="contact-icon">email</mat-icon>{{resumeData?.personalInformation?.email}}</span>
+      <span *ngIf="resumeData?.personalInformation?.phoneNumber"><mat-icon *ngIf="templateType==='premium'" class="contact-icon">phone</mat-icon>{{resumeData?.personalInformation?.phoneNumber}}</span>
+      <span *ngIf="resumeData?.personalInformation?.location"><mat-icon *ngIf="templateType==='premium'" class="contact-icon">location_on</mat-icon>{{resumeData?.personalInformation?.location}}</span>
+    </div>
+
+    <div class="links">
+      <span *ngIf="resumeData?.personalInformation?.Linkedin"><mat-icon *ngIf="templateType==='premium'" class="contact-icon">link</mat-icon>{{resumeData?.personalInformation?.Linkedin}}</span>
+      <span *ngIf="resumeData?.personalInformation?.Github"><mat-icon *ngIf="templateType==='premium'" class="contact-icon">code</mat-icon>{{resumeData?.personalInformation?.Github}}</span>
+      <span *ngIf="resumeData?.personalInformation?.portfolio"><mat-icon *ngIf="templateType==='premium'" class="contact-icon">language</mat-icon>{{resumeData?.personalInformation?.portfolio}}</span>
+    </div>
+
+  </div>
+
+  <div class="content">
+
+    <!-- LEFT SIDEBAR -->
+
+    <div class="left">
+
+      <section class="sec-summary" *ngIf="resumeData?.personalInformation?.summary">
+
+        <h2>Professional Summary</h2>
+
+        <p>
+          {{resumeData?.personalInformation?.summary}}
+        </p>
+
+      </section>
+
+      <section class="sec-skills" *ngIf="resumeData?.skills?.length">
+
+        <h2>Skills</h2>
+
+        <div
+          *ngFor="let skill of resumeData.skills"
+          class="skill-chip">
+
+          {{skill.title}}
+
+        </div>
+
+      </section>
+
+      <section class="sec-education" *ngIf="resumeData?.education?.length">
+
+        <h2>Education</h2>
+
+        <div
+          *ngFor="let edu of resumeData.education"
+          class="education-card">
+
+          <h4>{{edu.degree}}</h4>
+
+          <p>{{edu.university}}</p>
+
+          <small>
+            {{edu.location}} |
+            {{edu.graduationYear}}
+          </small>
+
+        </div>
+
+      </section>
+
+      <section class="sec-languages" *ngIf="resumeData?.languages?.length">
+
+        <h2>Languages</h2>
+
+        <ul>
+
+          <li *ngFor="let lang of resumeData.languages">
+            {{lang.name}}
+          </li>
+
+        </ul>
+
+      </section>
+
+    </div>
+
+    <!-- RIGHT SIDE -->
+
+    <div class="right">
+
+      <section class="sec-experience" *ngIf="resumeData?.experience?.length">
+
+        <h2>Experience</h2>
+
+        <div
+          *ngFor="let exp of resumeData.experience"
+          class="experience-item">
+
+          <div class="job-title">
+            {{exp.jobTitle}}
+          </div>
+
+          <div class="company">
+            {{exp.company}}
+          </div>
+
+          <div class="duration">
+            {{exp.location}} |
+            {{exp.duration}}
+          </div>
+
+          <p>
+            {{exp.responsibility}}
+          </p>
+
+        </div>
+
+      </section>
+
+      <section class="sec-projects" *ngIf="resumeData?.projects?.length">
+
+        <h2>Projects</h2>
+
+        <div
+          *ngFor="let project of resumeData.projects"
+          class="project">
+
+          <div class="project-title">
+            {{project.title}}
+          </div>
+
+          <p>
+            {{project.description}}
+          </p>
+
+          <div class="tech-stack">
+
+            Tech:
+
+            <span
+              *ngFor="let tech of project.technologiesUsed; let last = last">
+
+              {{tech}}{{!last ? ', ' : ''}}
+
+            </span>
+
+          </div>
+
+          
+            *ngIf="project.githubLink"
+            [href]="project.githubLink"
+            target="_blank">
+
+            GitHub Repository
+
+
+        </div>
+
+      </section>
+
+      <section class="sec-certifications" *ngIf="resumeData?.certifications?.length">
+
+        <h2>Certifications</h2>
+
+        <div
+          *ngFor="let cert of resumeData.certifications"
+          class="achievement-card">
+
+          <h4>{{cert.title}}</h4>
+
+          <small>
+            {{cert.issuingOrganization}}
+            ({{cert.year}})
+          </small>
+
+        </div>
+
+      </section>
+
+      <section class="sec-achievements" *ngIf="resumeData?.achievements?.length">
+
+        <h2>Achievements</h2>
+
+        <div
+          *ngFor="let ach of resumeData.achievements"
+          class="achievement-card">
+
+          <h4>{{ach.title}}</h4>
+
+          <small>{{ach.year}}</small>
+
+          <p>
+            {{ach.extraInformation}}
+          </p>
+
+        </div>
+
+      </section>
+
+      <section class="sec-interests" *ngIf="resumeData?.interests?.length">
+
+        <h2>Interests</h2>
+
+        <ul>
+
+          <li *ngFor="let interest of resumeData.interests">
+            {{interest.name}}
+          </li>
+
+        </ul>
+
+      </section>
+
+    </div>
+
+  </div>
+</div>
+
+<div class="template-btns">
+      <button type="button" mat-stroked-button class="change-template-btn" (click)="onChangeTemplate()">
+        <mat-icon>swap_horiz</mat-icon>
+        Change Template
+      </button>
+      <a href="generate-resume"><button type="button" class="generate-another-btn" mat-raised-button>
+        <mat-icon>refresh</mat-icon>
+        Generate Another
+      </button></a>
+      <button type="button" mat-raised-button class="print-btn" (click)="downloadPDF()">
+        <mat-icon>download</mat-icon>
+        Download PDF
+      </button>
+</div>

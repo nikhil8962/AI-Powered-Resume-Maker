@@ -1,0 +1,664 @@
+.template-btns{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin: 40px auto;
+  max-width: 1100px;
+  flex-wrap: wrap;
+}
+
+.change-template-btn{
+  color: var(--tf-amber, #EF9F27) !important;
+  border-color: var(--tf-amber, #EF9F27) !important;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border-radius: 8px;
+  transition: transform .2s ease, background-color .2s ease;
+}
+.change-template-btn:hover{
+  background-color: rgba(239,159,39,.12) !important;
+  transform: translateY(-2px);
+}
+
+.generate-another-btn{
+  background-color: transparent !important;
+  color: var(--tf-muted, #8FB8A9) !important;
+  border: 1px solid var(--tf-border, rgba(29,158,117,.4)) !important;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border-radius: 8px;
+  transition: transform .2s ease, background-color .2s ease, color .2s ease, border-color .2s ease;
+}
+.generate-another-btn:hover{
+  color: var(--tf-text, #EAF6EF) !important;
+  border-color: var(--tf-teal, #1D9E75) !important;
+  transform: translateY(-2px);
+}
+
+.print-btn{
+  background-color: var(--tf-teal, #1D9E75) !important;
+  color: #fff !important;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border-radius: 8px;
+  transition: transform .2s ease, background-color .2s ease;
+}
+.print-btn:hover{
+  background-color: #23b586 !important;
+  transform: translateY(-2px);
+}
+
+p{
+  color: grey;
+}
+
+.resume-container{
+  max-width:1100px;
+  margin:30px auto;
+  background:#fff;
+  border-radius:16px;
+  overflow:hidden;
+  box-shadow:0 10px 30px rgba(0,0,0,.12);
+  font-family:'Segoe UI',sans-serif;
+
+  --rt-header-bg: linear-gradient(135deg,#2563eb,#1e40af);
+  --rt-header-align: center;
+  --rt-header-text: #ffffff;
+  --rt-header-contact: #dbeafe;
+  --rt-grid-cols: 250px 1fr;
+  --rt-sidebar-bg: #1e293b;
+  --rt-sidebar-text: #e2e8f0;
+  --rt-sidebar-accent: #60a5fa;
+  --rt-main-bg: #ffffff;
+  --rt-main-text: #111827;
+  --rt-main-accent: #1e40af;
+  --rt-chip-bg: #3b82f6;
+  --rt-chip-text: #ffffff;
+  --rt-card-accent: #2563eb;
+  --rt-card-bg: #f8fafc;
+  --rt-font: 'Segoe UI', sans-serif;
+  --rt-font-size: 14px;
+}
+
+.header{
+  background:var(--rt-header-bg);
+  color:var(--rt-header-text);
+  padding:30px;
+  text-align:var(--rt-header-align);
+}
+
+.header h1{
+  margin:0;
+  font-size:40px;
+  font-weight:700;
+}
+
+.contact,
+.links{
+  margin-top:10px;
+  display:flex;
+  justify-content:var(--rt-header-align);
+  flex-wrap:wrap;
+  gap:15px;
+  font-size:13px;
+  color:var(--rt-header-contact);
+}
+
+.content{
+  display:grid;
+  grid-template-columns:var(--rt-grid-cols);
+  font-family:var(--rt-font);
+  font-size:var(--rt-font-size);
+}
+
+.left{
+  background:var(--rt-sidebar-bg);
+  color:var(--rt-sidebar-text);
+  padding:20px;
+}
+
+.left h2{
+  color:var(--rt-sidebar-accent);
+  border-bottom:2px solid var(--rt-sidebar-accent);
+  padding-bottom:6px;
+  margin-bottom:12px;
+}
+
+.left p,
+.left li,
+.left small{
+  color:var(--rt-sidebar-text);
+  line-height:1.5;
+}
+
+.right{
+  background:var(--rt-main-bg);
+  color:var(--rt-main-text);
+  padding:25px 30px;
+}
+
+.right h2{
+  color:var(--rt-main-accent);
+  border-bottom:2px solid var(--rt-main-accent);
+  padding-bottom:6px;
+  margin-bottom:15px;
+}
+
+section{
+  margin-bottom:25px;
+}
+
+/* Skills */
+
+.skill-chip{
+  display:inline-block;
+  background:var(--rt-chip-bg);
+  color:var(--rt-chip-text);
+  padding:5px 10px;
+  border-radius:15px;
+  margin:3px;
+  font-size:11px;
+  font-weight:500;
+}
+
+/* Education */
+
+.education-card{
+  background:rgba(255,255,255,.08);
+  border-left:4px solid var(--rt-sidebar-accent);
+  padding:8px;
+  border-radius:8px;
+  margin-bottom:10px;
+}
+
+.education-card h4{
+  margin:0;
+  font-size:14px;
+}
+
+/* Experience */
+
+.experience-item{
+  border-left:4px solid var(--rt-card-accent);
+  padding-left:15px;
+  margin-bottom:22px;
+}
+
+.job-title{
+  font-size:18px;
+  font-weight:700;
+  color:var(--rt-main-text);
+}
+
+.company{
+  color:var(--rt-main-accent);
+  font-weight:600;
+}
+
+.duration{
+  color:#64748b;
+  font-size:13px;
+  margin:5px 0;
+}
+
+/* Projects */
+
+.project{
+  background:var(--rt-card-bg);
+  border-left:4px solid var(--rt-card-accent);
+  padding:14px;
+  border-radius:10px;
+  margin-bottom:15px;
+}
+
+.project-title{
+  font-size:17px;
+  font-weight:700;
+  color:var(--rt-main-text);
+}
+
+.tech-stack{
+  margin-top:8px;
+  color:var(--rt-main-accent);
+  font-weight:600;
+}
+
+/* Achievement + Certification */
+
+.achievement-card{
+  background:var(--rt-card-bg);
+  border-left:4px solid var(--rt-card-accent);
+  padding:12px;
+  border-radius:8px;
+  margin-bottom:12px;
+}
+
+.achievement-card h4{
+  margin:0;
+  color:var(--rt-main-text);
+}
+
+.achievement-card small{
+  color:#64748b;
+}
+
+ul{
+  padding-left:18px;
+}
+
+li{
+  margin-bottom:5px;
+}
+
+a{
+  color:var(--rt-main-accent);
+  text-decoration:none;
+  font-weight:600;
+}
+
+a:hover{
+  text-decoration:underline;
+}
+
+/* ============ THEMES ============ */
+
+/* Classic — traditional single column, black & white */
+.theme-classic{
+  --rt-header-bg: #ffffff;
+  --rt-header-align: center;
+  --rt-header-text: #111827;
+  --rt-header-contact: #4b5563;
+  --rt-grid-cols: 1fr;
+  --rt-sidebar-bg: #ffffff;
+  --rt-sidebar-text: #374151;
+  --rt-sidebar-accent: #111827;
+  --rt-main-bg: #ffffff;
+  --rt-main-text: #111827;
+  --rt-main-accent: #111827;
+  --rt-chip-bg: #e5e7eb;
+  --rt-chip-text: #111827;
+  --rt-card-accent: #111827;
+  --rt-card-bg: #f9fafb;
+  --rt-font: Georgia, 'Times New Roman', serif;
+}
+.theme-classic .header{ border-bottom: 3px solid #111827; }
+.theme-classic .left{ border-bottom: 1px solid #e5e7eb; }
+
+/* Minimal — maximum whitespace, no color */
+.theme-minimal{
+  --rt-header-bg: #ffffff;
+  --rt-header-align: left;
+  --rt-header-text: #1f2937;
+  --rt-header-contact: #6b7280;
+  --rt-grid-cols: 1fr;
+  --rt-sidebar-bg: #ffffff;
+  --rt-sidebar-text: #374151;
+  --rt-sidebar-accent: #9ca3af;
+  --rt-main-bg: #ffffff;
+  --rt-main-text: #1f2937;
+  --rt-main-accent: #4b5563;
+  --rt-chip-bg: #ffffff;
+  --rt-chip-text: #374151;
+  --rt-card-accent: #d1d5db;
+  --rt-card-bg: #ffffff;
+}
+.theme-minimal .header{ padding: 24px 30px; }
+.theme-minimal .header h1{ font-size: 30px; }
+.theme-minimal .left h2,
+.theme-minimal .right h2{ border-bottom: 1px solid #e5e7eb; font-weight: 500; }
+.theme-minimal .skill-chip{ border: 1px solid #d1d5db; padding: 4px 8px; }
+.theme-minimal .project,
+.theme-minimal .achievement-card,
+.theme-minimal .education-card{ background: #ffffff; border-left-width: 2px; box-shadow: none; }
+
+/* Creative — bold colored banner header */
+.theme-creative{
+  --rt-header-bg: #c1543f;
+  --rt-header-align: center;
+  --rt-header-text: #ffffff;
+  --rt-header-contact: #ffe4de;
+  --rt-grid-cols: 1fr;
+  --rt-sidebar-bg: #fff5f2;
+  --rt-sidebar-text: #7c2d12;
+  --rt-sidebar-accent: #c1543f;
+  --rt-main-bg: #ffffff;
+  --rt-main-text: #1f2937;
+  --rt-main-accent: #c1543f;
+  --rt-chip-bg: #c1543f;
+  --rt-chip-text: #ffffff;
+  --rt-card-accent: #c1543f;
+  --rt-card-bg: #fff5f2;
+}
+.theme-creative .header{ padding: 40px 30px; }
+.theme-creative .header h1{ font-size: 44px; letter-spacing: 1px; }
+.theme-creative .left{ border-bottom: 2px solid #c1543f; }
+
+/* Executive — slim accent rule, formal serif */
+.theme-executive{
+  --rt-header-bg: #ffffff;
+  --rt-header-align: left;
+  --rt-header-text: #111827;
+  --rt-header-contact: #6b7280;
+  --rt-grid-cols: 1fr;
+  --rt-sidebar-bg: #ffffff;
+  --rt-sidebar-text: #374151;
+  --rt-sidebar-accent: #b8860b;
+  --rt-main-bg: #ffffff;
+  --rt-main-text: #111827;
+  --rt-main-accent: #92700a;
+  --rt-chip-bg: #fdf6e3;
+  --rt-chip-text: #92700a;
+  --rt-card-accent: #b8860b;
+  --rt-card-bg: #fffdf7;
+  --rt-font: Georgia, 'Times New Roman', serif;
+}
+.theme-executive .header{ border-left: 6px solid #b8860b; padding-left: 24px; }
+.theme-executive .left h2,
+.theme-executive .right h2{ font-weight: 400; letter-spacing: .5px; text-transform: uppercase; font-size: 15px; }
+
+/* Compact — dense, ATS-friendly, no color */
+.theme-compact{
+  --rt-header-bg: #ffffff;
+  --rt-header-align: left;
+  --rt-header-text: #111827;
+  --rt-header-contact: #4b5563;
+  --rt-grid-cols: 1fr;
+  --rt-sidebar-bg: #ffffff;
+  --rt-sidebar-text: #1f2937;
+  --rt-sidebar-accent: #111827;
+  --rt-main-bg: #ffffff;
+  --rt-main-text: #111827;
+  --rt-main-accent: #111827;
+  --rt-chip-bg: #f3f4f6;
+  --rt-chip-text: #111827;
+  --rt-card-accent: #9ca3af;
+  --rt-card-bg: #ffffff;
+  --rt-font-size: 12px;
+  box-shadow: none;
+  border-radius: 4px;
+}
+.theme-compact .header{ padding: 16px 24px; }
+.theme-compact .header h1{ font-size: 26px; }
+.theme-compact section{ margin-bottom: 14px; }
+.theme-compact .left,
+.theme-compact .right{ padding: 14px 18px; }
+.theme-compact .project,
+.theme-compact .achievement-card,
+.theme-compact .education-card{ padding: 8px; margin-bottom: 8px; }
+
+/* Premium — modeled directly on your own resume PDF: dense single column,
+   serif type, bold underlined section headers, title+date on one line */
+.theme-premium{
+  --rt-header-bg: #ffffff;
+  --rt-header-align: center;
+  --rt-header-text: #111111;
+  --rt-header-contact: #333333;
+  --rt-grid-cols: 1fr;
+  --rt-sidebar-bg: #ffffff;
+  --rt-sidebar-text: #111111;
+  --rt-sidebar-accent: #111111;
+  --rt-main-bg: #ffffff;
+  --rt-main-text: #111111;
+  --rt-main-accent: #111111;
+  --rt-chip-bg: transparent;
+  --rt-chip-text: #111111;
+  --rt-card-accent: #111111;
+  --rt-card-bg: #ffffff;
+  --rt-font: Georgia, Cambria, 'Times New Roman', serif;
+  --rt-font-size: 13px;
+  box-shadow: none;
+  border-radius: 0;
+}
+
+.theme-premium .header{
+  padding: 22px 40px 14px;
+}
+.theme-premium .header h1{
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: .5px;
+}
+.theme-premium .contact,
+.theme-premium .links{
+  gap: 0;
+  font-size: 11px;
+  color: var(--rt-header-contact);
+}
+.theme-premium .contact span,
+.theme-premium .links span{
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+}
+.theme-premium .contact span:not(:last-child)::after,
+.theme-premium .links span:not(:last-child)::after{
+  content: "|";
+  margin: 0 10px;
+  color: #999999;
+}
+.theme-premium .contact-icon{
+  font-size: 13px;
+  width: 13px;
+  height: 13px;
+  color: #555555;
+}
+
+/* Flatten left/right into one ordered column so sections can be
+   sequenced to match a typical resume flow, without touching any
+   other theme's left/right layout */
+.theme-premium .left,
+.theme-premium .right{
+  display: contents;
+}
+.theme-premium .content{
+  display: flex;
+  flex-direction: column;
+  padding: 0 40px 30px;
+}
+.theme-premium .sec-summary{ order: 1; }
+.theme-premium .sec-education{ order: 2; }
+.theme-premium .sec-skills{ order: 3; }
+.theme-premium .sec-projects{ order: 4; }
+.theme-premium .sec-experience{ order: 5; }
+.theme-premium .sec-certifications{ order: 6; }
+.theme-premium .sec-achievements{ order: 7; }
+.theme-premium .sec-languages{ order: 8; }
+.theme-premium .sec-interests{ order: 9; }
+
+.theme-premium section{ margin-bottom: 14px; }
+
+.theme-premium .left h2,
+.theme-premium .right h2{
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  color: #111111;
+  border-bottom: 1px solid #111111;
+  padding-bottom: 3px;
+  margin-bottom: 8px;
+}
+
+.theme-premium .left p,
+.theme-premium .right p,
+.theme-premium .left li,
+.theme-premium .right li,
+.theme-premium .left small,
+.theme-premium .right small{
+  color: #222222;
+  font-size: var(--rt-font-size);
+  line-height: 1.4;
+}
+
+.theme-premium .skill-chip{
+  display: inline;
+  background: none;
+  color: #111111;
+  padding: 0;
+  margin: 0;
+  border-radius: 0;
+  font-size: var(--rt-font-size);
+  font-weight: 400;
+}
+.theme-premium .skill-chip:not(:last-child)::after{
+  content: ", ";
+}
+
+.theme-premium .education-card{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  column-gap: 8px;
+  background: none;
+  border: none;
+  padding: 0;
+  border-radius: 0;
+  margin-bottom: 10px;
+}
+.theme-premium .education-card h4{
+  order: 1;
+  margin: 0;
+  font-size: 13px;
+  font-weight: 700;
+  color: #111111;
+}
+.theme-premium .education-card small{
+  order: 2;
+  margin-left: auto;
+  text-align: right;
+  white-space: nowrap;
+  font-style: italic;
+  color: #333333;
+}
+.theme-premium .education-card p{
+  order: 3;
+  flex-basis: 100%;
+  margin: 2px 0 0;
+  font-style: italic;
+}
+
+.theme-premium .experience-item{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  column-gap: 8px;
+  border-left: none;
+  padding-left: 0;
+  margin-bottom: 14px;
+}
+.theme-premium .job-title{
+  order: 1;
+  font-size: 13px;
+  font-weight: 700;
+  color: #111111;
+}
+.theme-premium .duration{
+  order: 2;
+  margin-left: auto;
+  text-align: right;
+  white-space: nowrap;
+  font-style: italic;
+  color: #333333;
+  font-size: 11.5px;
+}
+.theme-premium .company{
+  order: 3;
+  flex-basis: 100%;
+  font-style: italic;
+  font-weight: 400;
+  color: #333333;
+}
+.theme-premium .experience-item p{
+  order: 4;
+  flex-basis: 100%;
+  margin: 4px 0 0;
+}
+
+.theme-premium .project{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  column-gap: 8px;
+  background: none;
+  border-left: none;
+  padding: 0;
+  border-radius: 0;
+  margin-bottom: 12px;
+}
+.theme-premium .project-title{
+  order: 1;
+  font-size: 13px;
+  font-weight: 700;
+  color: #111111;
+}
+.theme-premium .tech-stack{
+  order: 2;
+  margin-left: auto;
+  text-align: right;
+  font-style: italic;
+  font-weight: 400;
+  color: #333333;
+  font-size: 11.5px;
+}
+.theme-premium .project p{
+  order: 3;
+  flex-basis: 100%;
+  margin: 3px 0;
+}
+.theme-premium .project a{
+  order: 4;
+  flex-basis: 100%;
+  font-size: 11px;
+}
+
+.theme-premium .achievement-card{
+  background: none;
+  border-left: none;
+  padding: 0 0 0 14px;
+  border-radius: 0;
+  margin-bottom: 8px;
+  position: relative;
+}
+.theme-premium .achievement-card::before{
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #111111;
+}
+.theme-premium .achievement-card h4{
+  display: inline;
+  font-size: var(--rt-font-size);
+  font-weight: 700;
+  color: #111111;
+}
+.theme-premium .achievement-card small{
+  margin-left: 4px;
+  font-style: italic;
+  color: #333333;
+}
+.theme-premium .achievement-card p{
+  margin: 2px 0 0;
+  font-size: 11.5px;
+  color: #333333;
+}
+
+.theme-premium ul{
+  list-style: disc;
+  padding-left: 16px;
+}
+.theme-premium a{
+  color: #111111;
+  text-decoration: underline;
+}
+
+@media print{
+  .resume-container{
+    box-shadow:none;
+    margin:0;
+    max-width:100%;
+  }
+}

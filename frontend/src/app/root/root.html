@@ -1,0 +1,28 @@
+<div>
+    <mat-toolbar class="toolbar">
+        <div class="left">
+            <a routerLink="/">
+                <button mat-button class="logo">
+                    <mat-icon class="logo-icon">bolt</mat-icon>
+                    AI RESUME MAKER
+                </button>
+            </a>
+        </div>
+
+        <div class="center">
+            <a routerLink="/about"><button mat-button><mat-icon>info</mat-icon>About</button></a>
+            <a routerLink="/services"><button mat-button><mat-icon>work_outline</mat-icon>Services</button></a>
+            <a routerLink="/contact"><button mat-button><mat-icon>mail_outline</mat-icon>Contact</button></a>
+        </div>
+
+        <div class="right">
+            <a routerLink="/login">
+                <button mat-stroked-button class="login-btn">
+                    <mat-icon>person_outline</mat-icon>
+                    Login
+                </button>
+            </a>
+        </div>
+    </mat-toolbar>
+</div>
+<router-outlet></router-outlet>

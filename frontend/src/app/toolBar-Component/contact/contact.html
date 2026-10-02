@@ -1,0 +1,69 @@
+<div class="hero">
+  <h1 class="fade-up fade-1">Get in <span class="accent-teal">Touch</span></h1>
+  <p class="tagline fade-up fade-2">Questions, feedback, or found a bug? We'd love to hear from you.</p>
+</div>
+
+<div class="section contact-layout">
+
+  <mat-card class="contact-form-card">
+    <mat-card-title>Send us a message</mat-card-title>
+    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Your Name</mat-label>
+        <input matInput formControlName="name">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Subject</mat-label>
+        <input matInput formControlName="subject">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Message</mat-label>
+        <textarea matInput rows="5" formControlName="message"></textarea>
+      </mat-form-field>
+
+      <button mat-flat-button type="submit" class="send-btn" [disabled]="contactForm.invalid">
+        <mat-icon>send</mat-icon>
+        Send Message
+      </button>
+
+    </form>
+  </mat-card>
+
+  <div class="contact-info">
+    <div class="info-card">
+      <div class="icon-badge teal"><mat-icon>email</mat-icon></div>
+      <div>
+        <h4>Email</h4>
+        <p>hello&#64;airesumemaker.com</p>
+      </div>
+    </div>
+    <div class="info-card">
+      <div class="icon-badge amber"><mat-icon>location_on</mat-icon></div>
+      <div>
+        <h4>Location</h4>
+        <p>Bhopal, India</p>
+      </div>
+    </div>
+    <div class="info-card">
+      <div class="icon-badge teal"><mat-icon>schedule</mat-icon></div>
+      <div>
+        <h4>Response Time</h4>
+        <p>We usually reply within 24–48 hours.</p>
+      </div>
+    </div>
+
+    <div class="social-row">
+      <a href="#" target="_blank" class="social-btn"><mat-icon>code</mat-icon></a>
+      <a href="#" target="_blank" class="social-btn"><mat-icon>link</mat-icon></a>
+    </div>
+  </div>
+
+</div>

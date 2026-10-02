@@ -1,0 +1,164 @@
+:host {
+  display: block;
+  background: var(--tf-bg);
+  color: var(--tf-text);
+  min-height: 100vh;
+
+  --tf-bg: #17201D;
+  --tf-card-bg: #1E2A24;
+  --tf-text: #EAF6EF;
+  --tf-muted: #8FB8A9;
+  --tf-teal: #1D9E75;
+  --tf-amber: #EF9F27;
+  --tf-border: rgba(29, 158, 117, 0.35);
+
+  --mdc-outlined-text-field-outline-color: var(--tf-border);
+  --mdc-outlined-text-field-hover-outline-color: var(--tf-teal);
+  --mdc-outlined-text-field-focus-outline-color: var(--tf-teal);
+  --mdc-outlined-text-field-label-text-color: var(--tf-muted);
+  --mdc-outlined-text-field-input-text-color: var(--tf-text);
+  --mdc-outlined-text-field-caret-color: var(--tf-teal);
+  --mat-form-field-container-text-color: var(--tf-text);
+}
+
+[matInput] {
+  color: var(--tf-text) !important;
+  caret-color: var(--tf-teal) !important;
+}
+
+:host ::ng-deep .mat-mdc-form-field:hover .mdc-notched-outline__leading,
+:host ::ng-deep .mat-mdc-form-field:hover .mdc-notched-outline__trailing {
+  border-color: var(--tf-teal) !important;
+}
+:host ::ng-deep .mat-mdc-form-field:hover .mdc-notched-outline__notch {
+  border-bottom-color: var(--tf-teal) !important;
+}
+:host ::ng-deep .mat-mdc-form-field:hover .mdc-floating-label {
+  color: var(--tf-text) !important;
+}
+
+.hero{
+  padding: 90px 24px 60px;
+  text-align: center;
+}
+.hero h1{
+  font-size: 40px;
+  font-weight: 700;
+  margin: 0 0 16px;
+}
+.accent-teal{ color: var(--tf-teal); }
+.tagline{
+  color: var(--tf-muted);
+  max-width: 500px;
+  margin: 0 auto;
+  font-size: 16px;
+}
+
+.fade-up{ opacity:0; animation: fadeUp .7s ease forwards; }
+.fade-1{ animation-delay:.1s; }
+.fade-2{ animation-delay:.3s; }
+@keyframes fadeUp{ from{opacity:0;transform:translateY(20px);} to{opacity:1;transform:translateY(0);} }
+
+.section{
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px 24px 80px;
+}
+
+.contact-layout{
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 30px;
+  align-items: start;
+}
+
+.contact-form-card{
+  background: var(--tf-card-bg) !important;
+  color: var(--tf-text) !important;
+  border: 1px solid var(--tf-border);
+  border-radius: 12px;
+  padding: 24px;
+}
+.contact-form-card mat-card-title{
+  color: var(--tf-text);
+  margin-bottom: 16px;
+}
+.full-width{ width: 100%; margin-bottom: 6px; }
+
+.send-btn{
+  background: var(--tf-teal) !important;
+  color: #fff !important;
+  border-radius: 8px !important;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 20px !important;
+  transition: transform .2s ease, background-color .2s ease;
+}
+.send-btn:hover:not(:disabled){
+  background: #23b586 !important;
+  transform: translateY(-2px);
+}
+.send-btn:disabled{
+  opacity: .5;
+}
+
+.contact-info{
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.info-card{
+  background: var(--tf-card-bg);
+  border: 1px solid var(--tf-border);
+  border-radius: 12px;
+  padding: 18px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.info-card:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(29,158,117,.15);
+}
+.icon-badge{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  flex-shrink: 0;
+}
+.icon-badge.teal{ background: var(--tf-teal); }
+.icon-badge.amber{ background: var(--tf-amber); }
+.info-card h4{ margin: 0 0 4px; font-size: 13px; }
+.info-card p{ margin: 0; color: var(--tf-muted); font-size: 13px; }
+
+.social-row{
+  display: flex;
+  gap: 12px;
+  margin-top: 4px;
+}
+.social-btn{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--tf-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--tf-text);
+  transition: transform .2s ease, border-color .2s ease, color .2s ease;
+}
+.social-btn:hover{
+  border-color: var(--tf-teal);
+  color: var(--tf-teal);
+  transform: translateY(-3px);
+}
+
+@media (max-width: 800px){
+  .contact-layout{ grid-template-columns: 1fr; }
+}

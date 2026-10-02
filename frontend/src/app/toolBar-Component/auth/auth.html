@@ -1,0 +1,101 @@
+<div class="auth-page">
+  <span class="floater f1"></span>
+  <span class="floater f2"></span>
+  <span class="floater f3"></span>
+
+  <mat-card class="auth-card fade-up">
+    <div class="auth-logo">
+      <mat-icon class="logo-icon">bolt</mat-icon>
+      AI RESUME MAKER
+    </div>
+
+    <div class="mode-toggle">
+      <button type="button" [class.active]="isLoginMode" (click)="switchMode(true)">Log In</button>
+      <button type="button" [class.active]="!isLoginMode" (click)="switchMode(false)">Sign Up</button>
+    </div>
+
+    <!-- LOGIN FORM -->
+    <div *ngIf="isLoginMode">
+      <h1>Welcome Back</h1>
+      <p class="auth-sub">Log in to continue building your resume.</p>
+
+      <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Email</mat-label>
+          <mat-icon matPrefix>mail_outline</mat-icon>
+          <input matInput formControlName="email" type="email">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Password</mat-label>
+          <mat-icon matPrefix>lock_outline</mat-icon>
+          <input matInput formControlName="password" [type]="hidePassword ? 'password' : 'text'">
+          <button type="button" mat-icon-button matSuffix (click)="hidePassword = !hidePassword">
+            <mat-icon>{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+        </mat-form-field>
+
+        <button mat-flat-button type="submit" class="auth-submit" [disabled]="loginForm.invalid || loading">
+          <mat-spinner *ngIf="loading" diameter="18"></mat-spinner>
+          <span *ngIf="!loading">Log In</span>
+          <mat-icon *ngIf="!loading">arrow_forward</mat-icon>
+        </button>
+      </form>
+    </div>
+
+    <!-- SIGNUP FORM -->
+    <div *ngIf="!isLoginMode">
+      <h1>Create Account</h1>
+      <p class="auth-sub">Sign up to start building your professional resume.</p>
+
+      <form [formGroup]="signupForm" (ngSubmit)="onSignup()">
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Full Name</mat-label>
+          <mat-icon matPrefix>person_outline</mat-icon>
+          <input matInput formControlName="fullName">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Email</mat-label>
+          <mat-icon matPrefix>mail_outline</mat-icon>
+          <input matInput formControlName="email" type="email">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Password</mat-label>
+          <mat-icon matPrefix>lock_outline</mat-icon>
+          <input matInput formControlName="password" [type]="hidePassword ? 'password' : 'text'">
+          <button type="button" mat-icon-button matSuffix (click)="hidePassword = !hidePassword">
+            <mat-icon>{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Confirm Password</mat-label>
+          <mat-icon matPrefix>lock_outline</mat-icon>
+          <input matInput formControlName="confirmPassword" [type]="hideConfirmPassword ? 'password' : 'text'">
+          <button type="button" mat-icon-button matSuffix (click)="hideConfirmPassword = !hideConfirmPassword">
+            <mat-icon>{{hideConfirmPassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+        </mat-form-field>
+
+        <p class="field-error" *ngIf="signupForm.errors?.['passwordMismatch'] && signupForm.get('confirmPassword')?.touched">
+          Passwords do not match.
+        </p>
+
+        <button mat-flat-button type="submit" class="auth-submit" [disabled]="signupForm.invalid || loading">
+          <mat-spinner *ngIf="loading" diameter="18"></mat-spinner>
+          <span *ngIf="!loading">Create Account</span>
+          <mat-icon *ngIf="!loading">arrow_forward</mat-icon>
+        </button>
+      </form>
+    </div>
+
+    <p class="switch-line" *ngIf="isLoginMode">
+      Don't have an account? <a (click)="switchMode(false)">Sign up</a>
+    </p>
+    <p class="switch-line" *ngIf="!isLoginMode">
+      Already have an account? <a (click)="switchMode(true)">Log in</a>
+    </p>
+  </mat-card>
+</div>
